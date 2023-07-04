@@ -7,6 +7,12 @@ import TodoList from './components/todo-list';
 
 
 const App = () => {
+  const todoData = [
+    { label: 'Drink Coffe', important: false },
+    { label: 'Make Awesome App', important: true },
+    { label: 'Have a lunch', important: false }
+  ]
+
   const isLoggedIn = true;
   const loginBox = <span>Log in please</span>
   const WelcomeBox = <span>Welcome Back</span>
@@ -16,7 +22,7 @@ const App = () => {
       {isLoggedIn ? WelcomeBox : loginBox}
       <AppHeader />
       <SearchPanel />
-      <TodoList />
+      <TodoList todos={todoData} />
     </div>
   )
 }
