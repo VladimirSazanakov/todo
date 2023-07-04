@@ -7,7 +7,7 @@ const TodoListItem = ({ label, important = false }) => {
   };
 
   return (
-    <span className="todo-list-item" style={style}>{label}
+    <span className="todo-list-item" style={style}>
       <span className="todo-list-item-label"
         style={style}>
         {label}
@@ -19,7 +19,7 @@ const TodoListItem = ({ label, important = false }) => {
 
       <button type="button"
         className="btn btn-outline-danger btn-sm">
-        <i className="fa fa-trash-o" />
+        <i className="fa fa-trash" />
       </button>
     </span>
   );
