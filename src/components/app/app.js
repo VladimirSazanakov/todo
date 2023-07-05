@@ -4,6 +4,7 @@ import ReactDom from 'react-dom';
 import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
 import TodoList from '../todo-list';
+import ItemAddForm from '../item-add-form';
 
 import './app.css';
 import ItemStatusFilter from '../item-status-filter';
@@ -12,6 +13,8 @@ export default class App extends Component {
   constructor(){
     super()
   };
+
+  maxId = 100;
   
   state ={ 
     todoData: [
@@ -35,6 +38,25 @@ deleteItem = (id) => {
   })
 }
 
+addItem = (text) => {
+  console.log('AddItem', text);
+  const newItem = {
+    label: text,
+    important: false,
+    id: this.maxId++
+  };
+  //this.maxId +=1;
+  //generate id ?
+  // then create object Item
+  // add element in massive
+
+  this.setState(({todoData})=>{
+    const newArray = [...todoData, newItem];
+    return {todoData: newArray};
+  })
+
+}
+
 render(){
   
   return (
@@ -46,6 +68,7 @@ render(){
       </div>
       <TodoList todos={this.state.todoData}
         onDeleted={this.deleteItem} />
+        <ItemAddForm onAddItem={this.addItem}/>
 
     </div>
   )
