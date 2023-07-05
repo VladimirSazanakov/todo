@@ -24,11 +24,14 @@ const App = () => {
       {isLoggedIn ? WelcomeBox : loginBox}
       <AppHeader />
       <div className="top-panel d-flex">
-      <SearchPanel />
-      <ItemStatusFilter />
+        <SearchPanel />
+        <ItemStatusFilter />
       </div>
-      <TodoList todos={todoData} />
-      
+      <TodoList todos={todoData}
+        onDeleted={(id) => {
+          console.log('del', id);
+        }} />
+
     </div>
   )
 }
