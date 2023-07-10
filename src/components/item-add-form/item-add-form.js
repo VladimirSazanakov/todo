@@ -35,9 +35,10 @@ export default class ItemAddForm extends Component {
         <input type='text' className="form-control"
           onChange={this.onLabelChange}
           placeholder="What needs to be done" />
-        <button type="button"
+        <button type="submit"
           className="btn btn-outline-secondary"
-          onClick={() => this.props.onAddItem('Hello World')}>
+          //onClick={() => this.props.onAddItem(this.state.lablel)}
+          >
           Add Item
 
         </button>
